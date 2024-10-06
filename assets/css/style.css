@@ -13,6 +13,10 @@
 html {
   font-size: 62.5%;
 }
+html,
+body {
+  scroll-behavior: smooth;
+}
 a {
   text-decoration: none;
 }
@@ -21,10 +25,20 @@ body {
   font-family: "Poppins", sans-serif;
   padding-bottom: 58px;
 }
-header.header {
+.hero-wrag {
   background-color: #e6f0ff;
-  height: 100vh;
+  height: calc(100vh - 90px);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.header-fix {
+  position: sticky;
+  padding: 40px 0 10px;
+  top: -30px;
+  background-color: #e6f0ff;
+  z-index: 1;
 }
 .content {
   width: 1110px;
@@ -32,28 +46,27 @@ header.header {
   margin-left: auto;
   margin-right: auto;
 }
-.header .navbar {
+.header-fix .navbar {
   display: flex;
   align-items: center;
-  padding-top: 50px;
 }
-.header ul {
+.header-fix ul {
   display: flex;
   margin-left: 50px;
 }
-.header .action {
+.header-fix .action {
   margin-left: auto;
 }
-.header ul a {
+.header-fix ul a {
   color: #4f5361;
   font-size: 1.4rem;
   font-weight: 500;
   padding: 14px;
 }
-.header ul a:hover {
+.header-fix ul a:hover {
   text-decoration: underline;
 }
-.header .action-link {
+.header-fix .action-link {
   color: var(--primary-color);
   font-size: 1.4rem;
   font-weight: 500;
@@ -72,15 +85,13 @@ header.header {
 .btn:hover {
   opacity: 0.9;
 }
-.header .action-btn {
+.header-fix .action-btn {
   padding: 13px 16px;
   margin-left: 18px;
   border-radius: 8px;
 }
 /* ====hero==== */
-.hero {
-  margin-top: 130px;
-}
+
 .hero .infor {
   width: 50%;
 }
@@ -134,11 +145,21 @@ header.header {
 }
 .client .row-logo {
   margin-top: 70px;
+  align-items: center;
+}
+.client .client-logo {
+  display: flex;
+  align-items: center;
+  padding: 0px 42px;
+  height: 90px;
+}
+.client .client-logo:hover {
+  box-shadow: 0px 10px 20px 0px #0000001a;
 }
 
 /*  ===== guides ===== */
 .guides {
-  margin-top: 174px;
+  padding-top: 174px;
 }
 .guides .title {
   position: relative;
@@ -491,6 +512,10 @@ header.header {
 }
 .foot .icon {
   margin-top: 40px;
+  display: flex;
+}
+.foot .icon a:not(:nth-child(1)) {
+  margin-left: 16px;
 }
 .foot .desc {
   color: #7a7a7e;
